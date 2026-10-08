@@ -36,9 +36,34 @@ dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 12px
 dd { margin: 0; color: var(--ink); text-align: right; }
 .bars { list-style: none; padding: 0; margin: 0 0 24px; display: flex; gap: 6px; align-items: flex-end; height: 180px; }
 .bars li { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; min-width: 0; }
-.stack { width: 100%; display: flex; flex-direction: column-reverse; border-radius: 4px 4px 0 0; overflow: hidden; min-height: 2px; background: var(--line); }
+.bar { width: 100%; flex: 1; display: flex; align-items: flex-end; padding: 0; border: 0; border-radius: 4px 4px 0 0; background: transparent; }
+.bar.on, .bar:hover { background: rgba(255, 255, 255, 0.06); }
+.stack { width: 100%; display: flex; flex-direction: column-reverse; border-radius: 4px 4px 0 0; overflow: hidden; min-height: 2px; background: var(--line); transition: height 0.3s ease; }
 .stack span { flex-basis: 0; }
 .stack .twin { background: var(--twin); }
 .stack .banshee { background: var(--banshee); }
 .stack .willow { background: var(--willow); }
 small { color: var(--muted); font-size: 0.7rem; }
+.readout { min-height: 1.5em; margin: 0 0 12px; color: var(--muted); }
+.notice { color: var(--twin); }
+.login { max-width: 480px; padding-top: 12vh; }
+.login .row input { flex: 1; min-width: 0; }
+.primary { background: var(--twin); color: #04101e; border-color: var(--twin); font-weight: 600; }
+.ghost { background: transparent; }
+button:not(:disabled):hover { border-color: var(--muted); }
+.check { display: flex; gap: 6px; align-items: center; color: var(--muted); cursor: pointer; }
+.check input { padding: 0; }
+.card { transition: opacity 0.2s ease, transform 0.2s ease; }
+.card:hover { transform: translateY(-2px); }
+.card.off { opacity: 0.45; }
+.card-head { all: unset; box-sizing: border-box; width: 100%; display: flex; justify-content: space-between; align-items: flex-start; cursor: pointer; border-radius: 8px; }
+.card-head:focus-visible { outline: 2px solid var(--twin); outline-offset: 4px; }
+.card-head h2 { margin: 0; }
+.pill { font-size: 0.7rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+.card.twin .spark { color: var(--twin); }
+.card.banshee .spark { color: var(--banshee); }
+.card.willow .spark { color: var(--willow); }
+.spark { width: 45%; height: 32px; }
+.meter { height: 4px; border-radius: 2px; background: var(--line); margin-top: 8px; overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--bad); transition: width 0.3s ease; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
