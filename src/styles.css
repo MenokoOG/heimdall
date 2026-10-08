@@ -1,0 +1,44 @@
+:root {
+  --bg: #0b0b10;
+  --panel: #15151d;
+  --line: #2a2a36;
+  --ink: #ececf3;
+  --muted: #a3a3b5;
+  --twin: #4da3ff;
+  --banshee: #a77bff;
+  --willow: #4fd19a;
+  --bad: #ff8a65;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+.shell { max-width: 1000px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0 0 8px; letter-spacing: 0.04em; }
+h2 { margin: 0 0 8px; font-size: 1rem; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.between { justify-content: space-between; }
+.muted { color: var(--muted); }
+.error { color: var(--bad); }
+input, select, button {
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 12px; font: inherit;
+}
+button { cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: default; }
+:focus-visible { outline: 2px solid var(--twin); outline-offset: 2px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 16px 0 32px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--line); border-radius: 12px; padding: 16px; }
+.card.twin { border-top-color: var(--twin); }
+.card.banshee { border-top-color: var(--banshee); }
+.card.willow { border-top-color: var(--willow); }
+.big { font-size: 2.5rem; margin: 0; line-height: 1.1; }
+dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 12px 0 0; color: var(--muted); }
+dd { margin: 0; color: var(--ink); text-align: right; }
+.bars { list-style: none; padding: 0; margin: 0 0 24px; display: flex; gap: 6px; align-items: flex-end; height: 180px; }
+.bars li { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; min-width: 0; }
+.stack { width: 100%; display: flex; flex-direction: column-reverse; border-radius: 4px 4px 0 0; overflow: hidden; min-height: 2px; background: var(--line); }
+.stack span { flex-basis: 0; }
+.stack .twin { background: var(--twin); }
+.stack .banshee { background: var(--banshee); }
+.stack .willow { background: var(--willow); }
+small { color: var(--muted); font-size: 0.7rem; }

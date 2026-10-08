@@ -1,0 +1,7 @@
+# The sink only. The dashboard UI deploys to GitHub Pages (see .github/workflows).
+[build]
+  command = "echo sink only"
+  publish = "public"
+
+[functions]
+  node_bundler = "esbuild"
